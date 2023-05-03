@@ -1,4 +1,5 @@
 name: 'Upload a Build Artifact'
+on: push
 steps:
 - uses: actions/checkout@v3
 
