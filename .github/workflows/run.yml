@@ -24,17 +24,15 @@ jobs:
         python -m pytest
 
 name: 'Upload a Build Artifact'
-jobs:
-  build:
-    steps:
-    - uses: actions/checkout@v3
+steps:
+- uses: actions/checkout@v3
 
-    - run: doxygen -g
+- run: doxygen -g
 
-    - run: doxygen
+- run: doxygen
 
-    - uses: actions/upload-artifact@v3
-      with:
-        name: doxygen-artifact
-        path: Doxyfile
+- uses: actions/upload-artifact@v3
+  with:
+    name: my-artifact
+    path: Doxyfile  
   
