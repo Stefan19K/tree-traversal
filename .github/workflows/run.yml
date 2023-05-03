@@ -1,21 +1,15 @@
-
-name: 'Upload a Build Artifact'
-on: push
+name: discord message
+on: [push]
 jobs:
+
   build:
+    name: Build
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v3
-
-    - run: sudo apt install doxygen
-
-    - run: doxygen -g
-
-    - run: doxygen
-
-    - uses: actions/upload-artifact@v3
+    - uses: actions/checkout@master
+    - name: send custom message with args
+      uses: appleboy/discord-action@master
       with:
-        name: my-artifact
-        path: Doxyfile  
-  
+        webhook_id: ${{ secrets.WEBHOOK_ID }}
+        webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
+        args: The ${{ github.event_name }} event triggered first step.
