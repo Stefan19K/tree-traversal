@@ -1,8 +1,11 @@
 name: send message
 on: push
 jobs:
-  uses: Stefan19K/discord-action@master
-  with:
-    webhook_id: ${{ secrets.WEBHOOK_ID }}
-    webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
-    message: The ${{ github.event_name }} event triggered first step.
+  build:
+    steps:
+
+    - uses: Stefan19K/discord-action@master
+      with:
+      webhook_id: ${{ secrets.WEBHOOK_ID }}
+      webhook_token: ${{ secrets.WEBHOOK_TOKEN }}
+      message: The ${{ github.event_name }} event triggered first step.
