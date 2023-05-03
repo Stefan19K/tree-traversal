@@ -9,10 +9,6 @@ on:
 
 jobs:
   build:
-    on:
-      pull_request:
-        types: [opened, reopened]
-        
     runs-on: ubuntu-latest
 
     steps:
