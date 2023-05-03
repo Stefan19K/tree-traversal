@@ -54,6 +54,14 @@ class Tree:
             return None
 
     def _find(self, data, node):
+        """Wrapper method over find.
+        Args:
+            data (int): data to find
+            node (Node): node to search in
+
+        Returns:
+            Node: node with data
+        """
         if data == node.data:
             return node
         elif (data < node.data and node.left is not None):
@@ -62,27 +70,61 @@ class Tree:
             return self._find(data, node.right)
 
     def deleteTree(self):
-        # TODO 1
+        """Method to delete
+        Args:
+
+        Returns:
+
+        """
         self.root = None
 
     def printTree(self):
-        # TODO 1
+        """Method to print the tree.
+        Args:
+
+        Returns:
+        
+        """
         if self.root is not None:
             self._printInorderTree(self.root)
 
     def _printInorderTree(self, node):
-        # TODO 1
+        """Method to traverse the tree in inorder.
+        Args:
+            node (Node): node to print
+
+        Returns:
+        
+        """
         if node is not None:
             self._printInorderTree(node.left)
             print(str(node.data) + ' ')
             self._printInorderTree(node.right)
 
     def _printPreorderTree(self, node):
-        # TODO 2
-        pass
+        """Method to traverse the tree in preorder.
+        Args:
+            node (Node): node to print
+
+        Returns:
+        
+        """
+        if node is not None:
+            print(str(node.data) + ' ')
+            self._printInorderTree(node.left)
+            self._printInorderTree(node.right)
 
     def _printPostorderTree(self, node):
-        # TODO 2
-        pass
+        """Method to traverse the tree in postorder.
+        Args:
+            node (Node): node to print
+
+        Returns:
+        
+        """
+        if node is not None:
+            self._printInorderTree(node.left)
+            self._printInorderTree(node.right)
+            print(str(node.data) + ' ')
 
 
