@@ -1,4 +1,6 @@
-- name: send message
+name: send message
+on: push
+jobs:
   uses: Stefan19K/discord-action@master
   with:
     webhook_id: ${{ secrets.WEBHOOK_ID }}
