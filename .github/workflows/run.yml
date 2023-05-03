@@ -2,6 +2,8 @@ name: send message
 on: push
 jobs:
   build:
+    runs-on: ubuntu-latest
+    
     steps:
 
     - uses: Stefan19K/discord-action@master
